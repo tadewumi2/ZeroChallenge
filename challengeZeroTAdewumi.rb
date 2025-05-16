@@ -23,3 +23,11 @@ puts "Subtotal: #{sub_total.format}"
 puts "PST: #{pst_amount.format} - #{(PST_RATE * 100).to_i}%"
 puts "GST: #{gst_amount.format} - #{(GST_RATE * 100).to_i}%"
 puts "Grand Total: #{grand_total.format}"
+
+if grand_total <= Money.new(500, 'CAD')
+  puts "Pocket Change"
+elsif grand_total > Money.new(500, 'CAD') && grand_total < Money.new(2000, 'CAD')
+	puts "Pocket Change"
+else
+	puts "Charge It!"
+end
